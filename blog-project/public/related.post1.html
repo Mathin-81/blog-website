@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding JavaScript Promises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #f4f4f9, #e8e8f1);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            color: #444;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Understanding JavaScript Promises</h1>
+        <p>JavaScript Promises are a powerful feature for handling asynchronous operations. Promises represent a value that may be available now, or in the future, or never. They provide a cleaner, more intuitive way to work with asynchronous code compared to traditional callback functions.</p>
+        <p>A Promise is in one of three states: pending, fulfilled, or rejected. It starts in the pending state, and then it can either be fulfilled with a value, or rejected with a reason (an error). Promises make it easier to write and manage asynchronous code, especially when dealing with multiple asynchronous operations.</p>
+        <p>To create a Promise, you use the `new Promise` constructor, passing in a function with two parameters: `resolve` and `reject`. You can then use the `.then()` method to handle the fulfillment of the Promise, and the `.catch()` method to handle any errors.</p>
+    </div>
+    <div class="footer">
+        &copy; 2024 Your Blog. All rights reserved.
+    </div>
+</body>
+</html>

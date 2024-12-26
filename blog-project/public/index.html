@@ -13,7 +13,7 @@
             color: #333;
         }
         .navbar {
-            background-color: #333;
+            background-color: #ff6f61;
             padding: 10px;
             text-align: center;
         }
@@ -25,7 +25,7 @@
             transition: background-color 0.3s ease;
         }
         .navbar a:hover {
-            background-color: #575757;
+            background-color: #ff9d8d;
             border-radius: 5px;
         }
         .navbar input[type="text"] {
@@ -36,18 +36,26 @@
         }
         .navbar button {
             padding: 5px 10px;
-            background-color: #5cb85c;
+            background-color: #ff6f61;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin-left: 5px;
         }
+        .navbar button:hover {
+            background-color: #ff9d8d;
+        }
         .hero {
-            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center/cover;
             color: white;
             text-align: center;
             padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .container {
             max-width: 800px;
@@ -60,9 +68,28 @@
         }
         .post {
             margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         h1, h2, h3 {
             color: #444;
+        }
+        .categories, .tags, .social-share {
+            margin: 15px 0;
+        }
+        .categories span, .tags span, .social-share a {
+            padding: 5px 10px;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            margin-right: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .categories span:hover, .tags span:hover, .social-share a:hover {
+            background-color: #ff9d8d;
         }
         .comments {
             margin-top: 20px;
@@ -72,7 +99,7 @@
             padding: 10px;
             background-color: #f9f9f9;
             border-left: 5px solid #ddd;
-            border-radius: 5px;
+            border-radius: 5px.
         }
         .comment-form {
             margin-top: 20px;
@@ -86,7 +113,7 @@
         }
         button {
             padding: 10px 20px;
-            background-color: #5cb85c;
+            background-color: #ff6f61;
             color: white;
             border: none;
             border-radius: 5px;
@@ -94,7 +121,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #4cae4c;
+            background-color: #ff9d8d;
         }
         .footer {
             background-color: #333;
@@ -104,7 +131,14 @@
             margin-top: 20px;
         }
         .related-posts, .author-bio, .contact-form, .recent-posts {
-            margin-top: 20px;
+            margin-top: 20px.
+        }
+        .related-posts ul, .recent-posts ul {
+            padding-left: 0;
+        }
+        .related-posts li, .recent-posts li {
+            list-style: none;
+            margin: 5px 0;
         }
         .recent-posts ul {
             display: grid;
@@ -122,14 +156,33 @@
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .social-share a {
-            margin-right: 10px;
-            color: #5cb85c;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin-top: 10px;
+            }
+            .recent-posts ul {
+                grid-template-columns: 1fr 1fr;
+            }
         }
-        .social-share a:hover {
-            color: #3e8e41;
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px;
+            }
+            .navbar a {
+                padding: 5px;
+            }
+            .navbar input[type="text"] {
+                width: 100%;
+                margin: 5px 0.
+            }
+            .navbar button {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .recent-posts ul {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -167,9 +220,9 @@
         <div class="related-posts">
             <h2>Related Posts</h2>
             <ul>
-                <li><a href="#">Related Post 1</a></li>
-                <li><a href="#">Related Post 2</a></li>
-                <li><a href="#">Related Post 3</a></li>
+                <li><a href="related-post1.html">Understanding JavaScript Promises</a></li>
+                <li><a href="related-post2.html">10 Tips for Effective Web Design</a></li>
+                <li><a href="related-post3.html">How to Get Started with React</a></li>
             </ul>
         </div>
         <div class="author-bio">
@@ -179,9 +232,12 @@
         <div class="recent-posts">
             <h2>Recent Posts</h2>
             <ul>
-                <li><a href="#">Recent Post 1</a></li>
-                <li><a href="#">Recent Post 2</a></li>
-                <li><a href="#">Recent Post 3</a></li>
+                <li><a href="recent-post1.html">Building Responsive Websites</a></li>
+                <li><a href="recent-post2.html">Introduction to Node.js</a></li>
+                <li><a href="recent-post3.html">CSS Grid vs. Flexbox</a></li>
+                <li><a href="recent-post4.html">The Future of Web Development</a></li>
+                <li><a href="recent-post5.html">Getting Started with Git and GitHub</a></li>
+                <li><a href="recent-post6.html">Top 5 JavaScript Frameworks</a></li>
             </ul>
         </div>
         <div class="comments">
@@ -237,4 +293,29 @@
             })
             .then(response => response.json())
             .then(data => {
-                if (data[_{{{CITATION{{{_1{](https://github.com/hello-jerryle/portfolio/tree/96e16ad47d3eddfd961092edb3dc14f1723d7694/BACKGROUND.md)[_{{{CITATION{{{_2{](https://github.com/DianaMurchich/diplom/tree/02b2990c9221522f01cd7b90efa39b2102d3cc8c/main_pages%2Fblog_post.php)
+                if (data.message === 'Comment added') {
+                    fetchComments();
+                    document.getElementById('comment').value = '';
+                } else {
+                    alert(data.message);
+                }
+            });
+        }
+
+        function fetchComments() {
+            fetch('/comments')
+            .then(response => response.json())
+            .then(data => {
+                var commentSection = document.querySelector('.comments');
+                commentSection.innerHTML = '<h2>Comments</h2>';
+                data.forEach(comment => {
+                    var newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.innerText = comment;
+                    commentSection.appendChild(newComment);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

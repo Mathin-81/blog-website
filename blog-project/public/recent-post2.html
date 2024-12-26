@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Node.js</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #f4f4f9, #e8e8f1);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Node.js</h1>
+        <h2>What is Node.js?</h2>
+        <p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to use JavaScript to write server-side code, enabling full-stack development using a single programming language. Node.js is known for its event-driven architecture and non-blocking I/O, making it efficient for building scalable and high-performance applications.</p>
+        <h2>Key Features</h2>
+        <p>Node.js comes with several key features:</p>
+        <ul>
+            <li>Non-blocking, event-driven architecture.</li>
+            <li>Fast and efficient performance.</li>
+            <li>Large ecosystem of libraries and modules via npm.</li>
+            <li>Scalability for handling large numbers of connections simultaneously.</li>
+        </ul>
+        <h2>Getting Started</h2>
+        <p>To get started with Node.js, you can download and install it from the official Node.js website. Once installed, you can create a simple server using the following code:</p>
+        <pre><code>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Server running at http://127.0.0.1:3000/');
+});
+        </code></pre>
+    </div>
+    <div class="footer">
+        &copy; 2024 Your Blog. All rights reserved.
+    </div>
+</body>
+</html>
