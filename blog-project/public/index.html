@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #f4f4f9, #e8e8f1);
+            color: #333;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .navbar input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-left: 10px;
+        }
+        .navbar button {
+            padding: 5px 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .post {
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #ddd;
+            border-radius: 5px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .related-posts, .author-bio, .contact-form, .recent-posts {
+            margin-top: 20px;
+        }
+        .recent-posts ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .recent-posts li {
+            list-style: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .recent-posts li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .social-share a {
+            margin-right: 10px;
+            color: #5cb85c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-share a:hover {
+            color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <input type="text" id="search-bar" placeholder="Search...">
+        <button onclick="searchPosts()">Search</button>
+    </div>
+    <div class="hero">
+        <h1>Welcome to My Blog</h1>
+        <p>Your go-to place for insightful articles and updates</p>
+    </div>
+    <div class="container">
+        <div class="post">
+            <h1>My Blog Post</h1>
+            <p>This is the content of the blog post.</p>
+            <div class="categories">
+                <strong>Categories:</strong>
+                <span>Technology</span>, <span>Programming</span>
+            </div>
+            <div class="tags">
+                <strong>Tags:</strong>
+                <span>#JavaScript</span>, <span>#WebDevelopment</span>
+            </div>
+            <div class="social-share">
+                <strong>Share this post:</strong>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=yourwebsite.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com/intent/tweet?url=yourwebsite.com&text=Check out this awesome blog post!" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=yourwebsite.com&title=Great Blog Post" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="related-posts">
+            <h2>Related Posts</h2>
+            <ul>
+                <li><a href="#">Related Post 1</a></li>
+                <li><a href="#">Related Post 2</a></li>
+                <li><a href="#">Related Post 3</a></li>
+            </ul>
+        </div>
+        <div class="author-bio">
+            <h2>About the Author</h2>
+            <p>This is the author bio.</p>
+        </div>
+        <div class="recent-posts">
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="#">Recent Post 1</a></li>
+                <li><a href="#">Recent Post 2</a></li>
+                <li><a href="#">Recent Post 3</a></li>
+            </ul>
+        </div>
+        <div class="comments">
+            <h2>Comments</h2>
+            <!-- Comments will go here -->
+        </div>
+        <div class="comment-form">
+            <h3>Leave a Comment</h3>
+            <form>
+                <textarea id="comment" rows="4" cols="50" placeholder="Write your comment here..."></textarea><br>
+                <button type="button" onclick="addComment()">Submit</button>
+            </form>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required><br><br>
+                <input type="email" placeholder="Your Email" required><br><br>
+                <textarea rows="4" cols="50" placeholder="Your Message" required></textarea><br><br>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 Your Blog. All rights reserved.
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetchComments();
+        });
+
+        function searchPosts() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const posts = document.querySelectorAll('.post');
+            posts.forEach(post => {
+                const postTitle = post.querySelector('h1').innerText.toLowerCase();
+                if (postTitle.includes(query)) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        function addComment() {
+            var commentText = document.getElementById('comment').value;
+            fetch('/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ comment: commentText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data[_{{{CITATION{{{_1{](https://github.com/hello-jerryle/portfolio/tree/96e16ad47d3eddfd961092edb3dc14f1723d7694/BACKGROUND.md)[_{{{CITATION{{{_2{](https://github.com/DianaMurchich/diplom/tree/02b2990c9221522f01cd7b90efa39b2102d3cc8c/main_pages%2Fblog_post.php)
